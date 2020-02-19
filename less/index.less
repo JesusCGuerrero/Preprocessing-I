@@ -19,7 +19,6 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -31,9 +30,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-}
-ol, ul {
-	list-style: none;
 }
 blockquote, q {
 	quotes: none;
@@ -57,3 +53,244 @@ html, body {
     height: 100%;
 }
 
+// My code starts here
+
+// Variables
+
+@white: rgb(253, 255, 239);
+
+@blue: rgb(79, 109, 138);
+
+@pink: rgb(255, 205, 193);
+
+@mainFont: 'Roboto', sans-serif;
+
+@secondaryFont: 'Abel', sans-serif;
+
+// Mixins
+
+.flexColumn() {
+	display: flex;
+	flex-direction: column;
+}
+
+.center() {
+	margin: 0 auto;
+}
+
+// Global
+
+html {
+	font-size: 62.5%;
+	color: @blue;
+}
+
+body {
+	background-color: @white;
+	width: 90%;
+	.center()
+}
+
+section {
+	display: flex;
+}
+
+h1 {
+	font-size: 5rem;
+	color: @pink;
+	line-height: .7;
+}
+
+h2 {
+	font-size: 3rem;
+	color: @white;
+	padding-top: 4px
+}
+
+h3 {
+	font-size: 2rem;
+	background-color: @pink;
+}
+
+h4 {
+	font-size: 1.8rem;
+}
+
+p, a, li {
+	font-size: 1.4rem;
+	line-height: 1.1;
+	font-family: @secondaryFont;
+}
+
+li {
+	margin-left: 30px;
+}
+
+ul {
+	padding-top: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: @mainFont;
+}
+
+// Navigation
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	background-color: @white;
+
+	@media(max-width: 500px) {
+			flex-direction: column;
+			position: relative;
+			text-align: center;
+	}
+
+	a {
+		color: @blue;
+		text-decoration: none;
+		font-size: 1.8rem;
+		padding: 5px 0;
+
+		@media(max-width: 500px) {
+			flex-direction: column;
+			position: relative;
+			text-align: center;
+			border-bottom: 1px solid @blue;
+		}
+
+		&:hover {
+			font-size: 2.2rem;
+			color: black;
+			padding: 0;
+		}//Closes nav a hover
+	}//Closes nav a
+}//Closes nav
+
+// Top
+
+.topBox {
+	padding-top: 30px;
+	background-color: @blue;
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+
+
+	@media(max-width: 500px) {
+		justify-content: space-around;
+		text-align: center;
+	}
+
+	div {
+		padding: 20px 0;
+		width: 50%;
+		.flexColumn();
+
+		@media (max-width: 500px) {
+			width: 100%;
+		}
+	}//Closes .topBox div
+}//Closes .topBox
+
+// Left
+.content {
+
+	@media(max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.leftSide {
+		position: relative;
+		bottom: 110px;
+		width: 50%;
+		.center();
+	
+		@media(max-width: 500px) {
+			width: 100%;
+			bottom: 0;
+		}
+	
+		div {
+			.flexColumn();
+			width: 70%;
+			.center();
+			background-color: @pink;
+			padding-bottom: 10px;
+	
+			@media(max-width: 500px) {
+				width: 100%;
+			}
+	
+			.leftChunk {
+				margin-bottom: 30px;
+				padding: 10px;
+	
+				img {
+					display: inline-block;
+					width: 80%;
+					margin: 20px auto;
+					border-radius: 15px;
+				}//Closes .leftSide img 
+	
+				.leftTitle {
+					padding-bottom: 10px;
+					border-bottom: 1px solid @blue;
+					margin-bottom: 10px;
+				}//Closes .leftSide .leftTitle
+			}// Closes .leftSide div .leftChunk
+	
+			.email, .phone {
+				text-decoration: none;
+				color: @blue;
+			
+				&:hover {
+					font-size: 2rem;
+				}//Closes .leftSide div .email, .phone hover
+			}//Closes .leftSide div .email .phone
+		}// Closes .leftSide div
+	}//Closes .leftSide
+	
+	// Right
+	
+	.rightSide {
+		width: 50%;
+		.center();
+
+		@media(max-width: 500px) {
+			width: 100%;
+		}
+		
+		div {
+			.flexColumn();
+			justify-content: center;
+			width: 90%;
+			.center();
+			padding: 20px 0;
+	
+			.rightTitle {
+				padding: 10px 5px;
+			}//Closes .rightSide div .rightTitle
+		}//Closes .rightSide div
+	}//Closes .rightSide
+
+}
+
+
+//Bottom
+
+footer {
+	background-color: @blue;
+
+	h6 {
+		color: @white;
+		text-align: center;
+		padding: 5px 0;
+	}//Closes footer h6
+}//Closes footer

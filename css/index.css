@@ -1,1 +1,323 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 62.5%;
+  color: #4f6d8a;
+}
+body {
+  background-color: #fdffef;
+  width: 90%;
+  margin: 0 auto;
+}
+section {
+  display: flex;
+}
+h1 {
+  font-size: 5rem;
+  color: #ffcdc1;
+  line-height: 0.7;
+}
+h2 {
+  font-size: 3rem;
+  color: #fdffef;
+  padding-top: 4px;
+}
+h3 {
+  font-size: 2rem;
+  background-color: #ffcdc1;
+}
+h4 {
+  font-size: 1.8rem;
+}
+p,
+a,
+li {
+  font-size: 1.4rem;
+  line-height: 1.1;
+  font-family: 'Abel', sans-serif;
+}
+li {
+  margin-left: 30px;
+}
+ul {
+  padding-top: 10px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: #fdffef;
+}
+@media (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+  }
+}
+nav a {
+  color: #4f6d8a;
+  text-decoration: none;
+  font-size: 1.8rem;
+  padding: 5px 0;
+}
+@media (max-width: 500px) {
+  nav a {
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    border-bottom: 1px solid #4f6d8a;
+  }
+}
+nav a:hover {
+  font-size: 2.2rem;
+  color: black;
+  padding: 0;
+}
+.topBox {
+  padding-top: 30px;
+  background-color: #4f6d8a;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+@media (max-width: 500px) {
+  .topBox {
+    justify-content: space-around;
+    text-align: center;
+  }
+}
+.topBox div {
+  padding: 20px 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 500px) {
+  .topBox div {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.content .leftSide {
+  position: relative;
+  bottom: 110px;
+  width: 50%;
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  .content .leftSide {
+    width: 100%;
+    bottom: 0;
+  }
+}
+.content .leftSide div {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+  background-color: #ffcdc1;
+  padding-bottom: 10px;
+}
+@media (max-width: 500px) {
+  .content .leftSide div {
+    width: 100%;
+  }
+}
+.content .leftSide div .leftChunk {
+  margin-bottom: 30px;
+  padding: 10px;
+}
+.content .leftSide div .leftChunk img {
+  display: inline-block;
+  width: 80%;
+  margin: 20px auto;
+  border-radius: 15px;
+}
+.content .leftSide div .leftChunk .leftTitle {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #4f6d8a;
+  margin-bottom: 10px;
+}
+.content .leftSide div .email,
+.content .leftSide div .phone {
+  text-decoration: none;
+  color: #4f6d8a;
+}
+.content .leftSide div .email:hover,
+.content .leftSide div .phone:hover {
+  font-size: 2rem;
+}
+.content .rightSide {
+  width: 50%;
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  .content .rightSide {
+    width: 100%;
+  }
+}
+.content .rightSide div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.content .rightSide div .rightTitle {
+  padding: 10px 5px;
+}
+footer {
+  background-color: #4f6d8a;
+}
+footer h6 {
+  color: #fdffef;
+  text-align: center;
+  padding: 5px 0;
+}
